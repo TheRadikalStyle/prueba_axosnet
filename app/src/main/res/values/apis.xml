@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="api_axosnet">https://devapi.axosnet.com/am/v2/api_receipts_beta/api/receipt/</string>
+    <string name="api_axosnet" translatable="false">https://devapi.axosnet.com/am/v2/api_receipts_beta/api/receipt/</string>
 </resources>

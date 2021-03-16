@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prueba Axosnet</string>
+    <string name="app_name" translatable="false">Prueba Axosnet</string>
     <string name="about_title">Acerca</string>
 
     <string name="general_loading">Cargando</string>
@@ -7,16 +7,16 @@
     <string name="general_done">Listo</string>
     <string name="general_yes">Si</string>
     <string name="general_search">Buscar</string>
-    <string name="general_error">Error</string>
+    <string name="general_error" translatable="false">Error</string>
     <string name="general_init_error">Error de inicialización</string>
 
-    <string name="model_recibos_id">ID</string>
-    <string name="model_recibos_provider">Provider</string>
-    <string name="model_recibos_amount">Amount</string>
-    <string name="model_recibos_emission">Emission date</string>
-    <string name="model_recibos_comment">Comment</string>
-    <string name="model_recibos_currency">Currency</string>
-    <string name="model_recibos_amount_currency">%.2f %s</string>
+    <string name="model_recibos_id" translatable="false">ID</string>
+    <string name="model_recibos_provider" translatable="false">Provider</string>
+    <string name="model_recibos_amount" translatable="false">Amount</string>
+    <string name="model_recibos_emission" translatable="false">Emission date</string>
+    <string name="model_recibos_comment" translatable="false">Comment</string>
+    <string name="model_recibos_currency" translatable="false">Currency</string>
+    <string name="model_recibos_amount_currency" translatable="false">%.2f %s</string>
 
     <string name="main_alertdialog_internetconnection_title">No hay conexión</string>
     <string name="main_alertdialog_internetconnection_message">Enciende los datos móviles o el Wi-Fi para continuar, la aplicación se cerrará</string>
@@ -24,6 +24,10 @@
     <string name="main_actionsearch_dialog_notfound">No se ha encontrado recibo con el ID proporcionado</string>
     <string name="main_recibos_getall_error">Ha ocurrido un error al mostrar los recibos, intenta de nuevo</string>
     <string name="main_recibos_emptyset">No hay recibos para mostrar</string>
+    <string name="main_fab_add">Agregar nuevo</string>
+    <string name="main_fab_search">Buscar por ID</string>
+    <string name="main_exit_dialog_title">Salir</string>
+    <string name="main_exit_dialog_message">¿Desea salir de la app?</string>
 
     <string name="detalles_operaciones_title">Operaciones</string>
     <string name="detalles_operaciones_delete">Eliminar</string>

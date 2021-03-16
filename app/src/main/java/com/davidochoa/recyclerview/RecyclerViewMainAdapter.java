@@ -66,8 +66,6 @@ public class RecyclerViewMainAdapter extends RecyclerView.Adapter<RecyclerViewMa
         holder.hostCardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Tocado ID: " + dataset.get(position).getId(), Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(context, DetallesActivity.class);
                 intent.putExtra("id", dataset.get(position).getId());
                 intent.putExtra("provider", dataset.get(position).getProvider());

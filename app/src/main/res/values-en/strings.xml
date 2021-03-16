@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="formulario_recibos_currency_empty">Currency can\'t be empty</string>
+    <string name="formulario_recibos_comment_empty">Comment can\'t be empty</string>
+    <string name="formulario_recibos_emission_empty">Emission date can\'t be empty</string>
+    <string name="formulario_recibos_amount_empty">Amount can\'t be empty</string>
+    <string name="formulario_recibos_provider_empty">Provider can\'t be empty</string>
+    <string name="formulario_init_error">An error occured, please check yout id</string>
+    <string name="formulario_button_edit">Update</string>
+    <string name="formulario_button_save">Save</string>
+    <string name="detalles_operaciones_edit">Edit</string>
+    <string name="detalles_operaciones_delete">Delete</string>
+    <string name="main_fab_search">Search by ID</string>
+    <string name="main_fab_add">Add new</string>
+    <string name="main_recibos_emptyset">No receipts to show</string>
+    <string name="main_recibos_getall_error">An error occurred showing receipts, please try again</string>
+    <string name="main_actionsearch_dialog_notfound">No receipts found with the id given</string>
+    <string name="main_actionsearch_dialog_title">Input the ID to search</string>
+    <string name="main_alertdialog_internetconnection_message">Please turn on Wi-Fi or mobile data to continue, the app will close</string>
+    <string name="main_alertdialog_internetconnection_title">No connection</string>
+    <string name="general_init_error">Init error</string>
+    <string name="general_search">Search</string>
+    <string name="general_yes">Yes</string>
+    <string name="general_done">Done</string>
+    <string name="general_cancel">Cancel</string>
+    <string name="general_loading">Loading</string>
+    <string name="about_title">About</string>
+    <string name="detalles_operaciones_delete_message">Do you want delete this receipt?</string>
+    <string name="detalles_operaciones_title">Operations</string>
+    <string name="main_exit_dialog_title">Exit</string>
+    <string name="main_exit_dialog_message">Do you want to exit?</string>
+</resources>

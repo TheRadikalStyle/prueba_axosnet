@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.davidochoa.about.AboutActivity;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayout loadingLayout, emptySetLayout;
     private MainViewModel mainViewModel;
+    private FloatingActionButton fab_commander, fab_add, fab_search;
+    private TextView fab_helper_addTXV, fab_helper_searchTXV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,28 +95,23 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void ConfigureFABS(){
-        FloatingActionButton fab_commander = findViewById(R.id.main_fab_commander);
-        FloatingActionButton fab_add = findViewById(R.id.main_fab_add);
-        FloatingActionButton fab_search = findViewById(R.id.main_fab_search);
+        fab_helper_addTXV = findViewById(R.id.main_fab_textview_add);
+        fab_helper_searchTXV = findViewById(R.id.main_fab_textview_search);
+        fab_commander = findViewById(R.id.main_fab_commander);
+        fab_add = findViewById(R.id.main_fab_add);
+        fab_search = findViewById(R.id.main_fab_search);
 
         fab_commander.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(fab_add.isOrWillBeHidden() && fab_search.isOrWillBeHidden()){
-                    fab_commander.setImageDrawable(getResources().getDrawable(R.drawable.ic_close_grey));
-                    fab_add.show();
-                    fab_search.show();
-                }else{
-                    fab_commander.setImageDrawable(getResources().getDrawable(R.drawable.ic_plus_grey));
-                    fab_add.hide();
-                    fab_search.hide();
-                }
+                FABChanger();
             }
         });
 
         fab_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FABChanger();
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle(getResources().getString(R.string.main_actionsearch_dialog_title));
 
@@ -142,9 +140,26 @@ public class MainActivity extends AppCompatActivity {
         fab_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FABChanger();
                 startActivity(new Intent(MainActivity.this, FormularioActivity.class));
             }
         });
+    }
+
+    public void FABChanger(){
+        if(fab_add.isOrWillBeHidden() && fab_search.isOrWillBeHidden()){
+            fab_commander.setImageDrawable(getResources().getDrawable(R.drawable.ic_close_grey));
+            fab_add.show();
+            fab_search.show();
+            fab_helper_addTXV.setVisibility(View.VISIBLE);
+            fab_helper_searchTXV.setVisibility(View.VISIBLE);
+        }else{
+            fab_commander.setImageDrawable(getResources().getDrawable(R.drawable.ic_plus_grey));
+            fab_add.hide();
+            fab_search.hide();
+            fab_helper_addTXV.setVisibility(View.GONE);
+            fab_helper_searchTXV.setVisibility(View.GONE);
+        }
     }
 
 
@@ -180,6 +195,40 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, getResources().getString(R.string.main_alertdialog_internetconnection_title), Toast.LENGTH_SHORT).show();
         }
         super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        recyclerView = null;
+        loadingLayout = null;
+        emptySetLayout = null;
+        mainViewModel = null;
+        fab_commander = null;
+        fab_add = null;
+        fab_search = null;
+        fab_helper_addTXV = null;
+        fab_helper_searchTXV = null;
+
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle(getResources().getString(R.string.main_exit_dialog_title))
+                .setMessage(getResources().getString(R.string.main_exit_dialog_message))
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                }).show();
     }
 
     /**

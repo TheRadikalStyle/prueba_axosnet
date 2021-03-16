@@ -101,9 +101,12 @@
 
     <Button
         android:id="@+id/formulario_button_morph"
-        style="@style/Widget.AppCompat.Button"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/material_green_700"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:padding="16dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
