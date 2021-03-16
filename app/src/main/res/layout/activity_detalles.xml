@@ -113,6 +113,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/material_grey_200"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardPreventCornerOverlap="true"
@@ -145,14 +146,6 @@
                     android:layout_weight="0.5"
                     android:text="@string/detalles_operaciones_delete"
                     app:icon="@drawable/ic_close_grey" />
-
-                <View
-                    android:id="@+id/divider"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginEnd="2dp"
-                    android:background="?android:attr/listDivider" />
 
                 <Button
                     android:id="@+id/detalles_button_edit"

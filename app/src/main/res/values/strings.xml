@@ -29,6 +29,8 @@
     <string name="main_exit_dialog_title">Salir</string>
     <string name="main_exit_dialog_message">¿Desea salir de la app?</string>
 
+    <string name="main_recycler_receipt_id">ID: %d</string>
+
     <string name="detalles_operaciones_title">Operaciones</string>
     <string name="detalles_operaciones_delete">Eliminar</string>
     <string name="detalles_operaciones_delete_message">¿Está seguro de eliminar este recibo?</string>

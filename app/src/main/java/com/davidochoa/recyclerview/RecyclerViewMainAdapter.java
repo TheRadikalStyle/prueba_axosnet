@@ -28,13 +28,14 @@ public class RecyclerViewMainAdapter extends RecyclerView.Adapter<RecyclerViewMa
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView providerTXV, amountTXV, emissionTXV;
+        private TextView idTXV, providerTXV, amountTXV, emissionTXV;
         private CardView hostCardview;
 
         public ViewHolder(View view) {
             super(view);
 
             hostCardview = view.findViewById(R.id.recyclerviewmaintemp_cardview_container);
+            idTXV = view.findViewById(R.id.recyclerviewmaintemp_textview_receiptid);
             providerTXV = view.findViewById(R.id.recyclerviewmaintemp_textview_provider);
             amountTXV = view.findViewById(R.id.recyclerviewmaintemp_textview_amount);
             emissionTXV = view.findViewById(R.id.recyclerviewmaintemp_textview_emission);
@@ -55,6 +56,9 @@ public class RecyclerViewMainAdapter extends RecyclerView.Adapter<RecyclerViewMa
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewMainAdapter.ViewHolder holder, int position) {
+        holder.idTXV.setText(
+                String.format( context.getResources().getString(R.string.main_recycler_receipt_id), this.dataset.get(position).getId())
+        );
         holder.providerTXV.setText(this.dataset.get(position).getProvider());
         holder.amountTXV.setText(
                 String.format(context.getResources().getString(R.string.model_recibos_amount_currency),
